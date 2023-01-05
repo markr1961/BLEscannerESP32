@@ -3,13 +3,17 @@
    Ported to Arduino ESP32 by Evandro Copercini
 */
 
+#include <Arduino.h>
+
 #include <BLEDevice.h>
 #include <BLEUtils.h>
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
 
 #define LOOP_DELAY  2000  // in mS
-int scanTime = 5; // in seconds
+#define LED         2 // LED_BUILTIN
+#define scanTime    5 // in seconds
+
 BLEScan* pBLEScan;
 
 class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks 
@@ -26,9 +30,9 @@ void setup()
   Serial.begin(115200);
   Serial.println("Scanning...");
 
-  // initialize digital pin LED_BUILTIN as an output.
-  pinMode(LED_BUILTIN, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  // initialize digital pin LED as an output.
+  pinMode(LED, OUTPUT);
+  digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
 
   BLEDevice::init("");
   pBLEScan = BLEDevice::getScan(); //create new scan
@@ -42,8 +46,8 @@ void loop()
 {
   static bool laststate = false;
 
-  digitalWrite(LED_BUILTIN, laststate); // set the LED;
-  laststate = !laststate;               // toggle the state for next pass;
+  digitalWrite(LED, laststate);     // set the LED;
+  laststate = !laststate;           // toggle the state for next pass;
 
   BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
   Serial.print("Devices found: ");

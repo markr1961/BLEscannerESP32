@@ -1,7 +1,6 @@
-Simple BLE scanner based on <tbd>
-http://www.lilygo.cn/prod_view.aspx?TypeId=50033&Id=1109&FId=t3:50033:3
+Simple BLE scanner
 
-All output is dumped to the serial port, so if the LED is disabled it should work on any ESP32 dev board.
+All output is dumped to the serial port, so it should work on any ESP32 dev board.
 
 Based on https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE/examples/BLE_scan
 
@@ -10,10 +9,10 @@ or follow the link from https://github.com/espressif/arduino-esp32
 
 Board manager:  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
-Arduino board:  "HalTec WiFi Kit 32" ???
+Arduino board:  "ESP32 Dev Module" All other settings at default.
 
 Board info:
-BN:   <tbd>
-VID:  <tbd>
-PID:  <tbd>
-SN:   <tbd>
+BN:   tbd
+VID:  tbd
+PID:  tbd
+SN:   tbd

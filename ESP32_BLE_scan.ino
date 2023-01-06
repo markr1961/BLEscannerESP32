@@ -10,9 +10,9 @@
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
 
+#define LED_BUILTIN 2     // should have been defined for the ESP32, but alas it's not.
 #define LOOP_DELAY  2000  // in mS
-#define LED         2 // LED_BUILTIN
-#define scanTime    5 // in seconds
+#define scanTime    5     // BLE scan duration/timeout in seconds
 
 BLEScan* pBLEScan;
 
@@ -31,8 +31,8 @@ void setup()
   Serial.println("Scanning...");
 
   // initialize digital pin LED as an output.
-  pinMode(LED, OUTPUT);
-  digitalWrite(LED, HIGH);   // turn the LED on (HIGH is the voltage level)
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
 
   BLEDevice::init("");
   pBLEScan = BLEDevice::getScan(); //create new scan
@@ -46,7 +46,7 @@ void loop()
 {
   static bool laststate = false;
 
-  digitalWrite(LED, laststate);     // set the LED;
+  digitalWrite(LED_BUILTIN, laststate);     // set the LED;
   laststate = !laststate;           // toggle the state for next pass;
 
   BLEScanResults foundDevices = pBLEScan->start(scanTime, false);

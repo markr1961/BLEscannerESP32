@@ -9,7 +9,8 @@ or follow the link from https://github.com/espressif/arduino-esp32
 
 Board manager:  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
-Arduino board:  "ESP32 Dev Module" All other settings at default.
+Arduino board:  "ESP32 Dev Module" All other settings at default. 
+Should look at "DOIT ESP32 DEVKIT V1" as a possible build target.
 
 Board info:
 BN:   tbd

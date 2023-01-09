@@ -9,11 +9,10 @@ or follow the link from https://github.com/espressif/arduino-esp32
 
 Board manager:  https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
 
-Arduino board:  "ESP32 Dev Module" All other settings at default. 
-Should look at "DOIT ESP32 DEVKIT V1" as a possible build target.
+Arduino board:  "WEMOS LOLIN32-Lite" All other settings at default. Should also look at "ESP32 Dev Module" as a possible build target.
 
 Board info:
-BN:   tbd
-VID:  tbd
-PID:  tbd
-SN:   tbd
+BN:   Unknown board
+VID:  1A86
+PID:  7523
+SN:   Upload any sketch to obtain it

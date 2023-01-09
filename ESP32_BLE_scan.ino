@@ -20,7 +20,7 @@ class MyAdvertisedDeviceCallbacks: public BLEAdvertisedDeviceCallbacks
 {
     void onResult(BLEAdvertisedDevice advertisedDevice) 
     {
-      Serial.printf("Advertised Device: %s \n", advertisedDevice.toString().c_str());
+      Serial.printf("   ---> Device: %s.\r\n", advertisedDevice.toString().c_str());
     }
 };
 
@@ -45,14 +45,17 @@ void setup()
 void loop() 
 {
   static bool laststate = false;
+  static int  scanCount = 0;
 
   digitalWrite(LED_BUILTIN, laststate);     // set the LED;
   laststate = !laststate;           // toggle the state for next pass;
 
   BLEScanResults foundDevices = pBLEScan->start(scanTime, false);
   Serial.print("Devices found: ");
-  Serial.println(foundDevices.getCount());
-  Serial.println("Scan done!");
+  Serial.print(foundDevices.getCount());
+  Serial.print(". Scan # ");
+  Serial.print(scanCount++);
+  Serial.println(" done!");
   pBLEScan->clearResults();   // delete results fromBLEScan buffer to release memory
 
   delay(LOOP_DELAY);

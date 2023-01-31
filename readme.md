@@ -1,6 +1,8 @@
 Simple BLE scanner using clone of WeMos LOLIN32 Lite (Retired)
 
-All output is dumped to the serial port, so it should work on any ESP32 dev board.
+All output is dumped to the serial port, so it should work on any ESP32 dev board. BUILTIN_LET is on while scanning
+
+A collection of HW info for this board can be found at https://github.com/markr1961/_ESP32_dev_board_docs in the Lolin32_Lite folder. 
 
 Based on https://github.com/espressif/arduino-esp32/tree/master/libraries/BLE/examples/BLE_scan
 
@@ -18,7 +20,7 @@ SN:   Upload any sketch to obtain it
 WeMos has dropped the LOLIN32-Lite from their website. (Probably because of all the clones.)
 Internet Archive: https://web.archive.org/web/20191002041532/https://wiki.wemos.cc/products:lolin32:lolin32_lite
 
-User LED is on I/O 22
+User LED is on GPIO22. DOIT ESP32 dev board V1 uses GPIO02
 no user button.
 
 Microcontroller	    ESP32-DOWDQ6 (single core)

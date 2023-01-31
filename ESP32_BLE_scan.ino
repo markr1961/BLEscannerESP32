@@ -10,7 +10,8 @@
 #include <BLEScan.h>
 #include <BLEAdvertisedDevice.h>
 
-#define LED_BUILTIN 22    // should have been defined for the ESP32, but alas it's not.
+//#define LED_BUILTIN 22    // should have been defined for the ESP32, but alas it's not.
+#define LED_BUILTIN  2    // used on DOIT ESP32 dev board V1.
 #define LOOP_DELAY  2000  // in mS
 #define scanTime    5     // BLE scan duration/timeout in seconds
 
